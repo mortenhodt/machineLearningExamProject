@@ -116,8 +116,8 @@ def combine_player_data(player_id, league_id):
     profile.update(stats)  # Merge profile and stats dictionaries
     return profile
 
-input_filename = '/Users/christianhjorth/Library/Mobile Documents/com~apple~CloudDocs/Documents/CBS/ML Exam/player_details.csv'
-output_filename = '/Users/christianhjorth/Library/Mobile Documents/com~apple~CloudDocs/Documents/CBS/ML Exam/player_stats.csv'
+input_filename = 'data/player_details.csv'
+output_filename = 'data/player_stats.csv'
 
 # Open the input CSV file to read player IDs and league IDs
 with open(input_filename, mode='r', newline='') as infile, \

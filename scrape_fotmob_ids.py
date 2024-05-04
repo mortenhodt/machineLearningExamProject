@@ -82,7 +82,7 @@ def fetch_player_details(team_id):
         print(f"Failed to fetch player details for team {team_id}: {e}")
         return []  # Return an empty list if there's an error
 
-filename = '/Users/christianhjorth/Library/Mobile Documents/com~apple~CloudDocs/Documents/CBS/ML Exam/player_details.csv'
+filename = 'data/player_details.csv'
 
 # Open file to write league ID, team ID, player ID, and player name
 with open(filename, mode='w', newline='') as file:
