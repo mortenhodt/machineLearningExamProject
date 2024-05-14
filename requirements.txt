@@ -5,3 +5,6 @@ scikit-learn
 tensorflow
 scikeras
 keras_tuner
+warnings
+urllib3
+os
