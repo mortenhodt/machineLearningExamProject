@@ -82,7 +82,7 @@ def fetch_player_details(team_id):
         print(f"Failed to fetch player details for team {team_id}: {e}")
         return []  # Return an empty list if there's an error
 
-filename = 'data/player_details.csv'
+filename = '../data/player_details.csv'
 
 # Open file to write league ID, team ID, player ID, and player name
 with open(filename, mode='w', newline='') as file:
@@ -98,48 +98,7 @@ with open(filename, mode='w', newline='') as file:
             player_details = fetch_player_details(team_id)
             for player_id, player_name in player_details:
                 writer.writerow([league_id, team_id, player_id, player_name])
-    #         except Exception as e:
-    #             print(f"Failed to fetch players for team ID {team_id}: {e}")
-    # except Exception as e:
-    #     print(f"Failed to fetch data for league ID {league_id}: {e}")
+
 
 print(f"Data has been written to {filename}")
 
-
-
-
-'''
-# List to store all team IDs
-all_team_ids = []
-
-# Loop through league IDs and fetch team IDs
-for league_id in league_ids.values():
-    try:
-        team_ids = fetch_team_ids(league_id)
-        all_team_ids.extend(team_ids)  # Add fetched team IDs to the list
-    except Exception as e:
-        print(f"Failed to fetch data for league ID {league_id}: {e}")
-
-filename = '/Users/christianhjorth/Library/Mobile Documents/com~apple~CloudDocs/Documents/CBS/ML Exam/player_ids.txt'
-
-# Open file to write player IDs
-with open(filename, 'w') as file:
-    # Loop through league IDs and fetch team IDs
-    for team_id in all_team_ids:
-        try:
-            player_ids = fetch_player_ids(team_id)
-            # Write each player ID on a new line
-            for player_id in player_ids:
-                file.write(f'{player_id}\n')
-        except Exception as e:
-            print(f"Failed to fetch data for team ID {team_id}: {e}")
-
-print(f"Data has been written to {filename}")
-
-
-# league_response = requests.get('https://www.fotmob.com/api/leagues?id=53')
-# data = league_response.json()
-
-# teams = data["table"][0]["data"]["table"]["all"]
-# team_ids = [team["id"] for team in teams]  # Ensure 'id' is the correct key
-'''

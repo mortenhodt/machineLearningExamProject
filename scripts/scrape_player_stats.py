@@ -116,8 +116,8 @@ def combine_player_data(player_id, league_id):
     profile.update(stats)  # Merge profile and stats dictionaries
     return profile
 
-input_filename = 'data/player_details.csv'
-output_filename = 'data/player_stats.csv'
+input_filename = '../data/player_details.csv'
+output_filename = '../data/player_stats.csv'
 
 # Open the input CSV file to read player IDs and league IDs
 with open(input_filename, mode='r', newline='') as infile, \
@@ -148,30 +148,3 @@ with open(input_filename, mode='r', newline='') as infile, \
             print(f"Failed to fetch data for player ID {player_id}: {e}")
 
 print(f"Data has been written to {output_filename}")
-
-'''
-
-player_data = combine_player_data(player_id, league_id) 
-
-# Save to CSV
-with open(filename, mode='w', newline='') as file:
-    writer = csv.DictWriter(file, fieldnames=player_data.keys())
-    writer.writeheader()
-    writer.writerow(player_data)
-
-print(f"Data has been written to {filename}")
-
-tests!
-# Test with a specific player ID - Aubameyang
-player_id = 150565  # Replace with a real player ID
-league_id = 53
-
-# Brynhildsen
-player2_id = 837066  # Replace with a real player ID
-league2_id = 46
-
-player_data = combine_player_data(player_id, league_id) 
-player2_data = combine_player_data(player2_id, league2_id)
-
-# print(player2_data)
-'''
